@@ -1,19 +1,19 @@
-import collections.services.FilmService;
-import streams.services.StringStreamService;
+import models.films.FunctionalInterface;
+import services.FilmService;
+import services.LambdaService;
+import services.StreamService;
 
 public class JavaSandbox {
 
     public static void main(String[] args) {
         FilmService filmService = new FilmService();
-//        filmService.testListOf();
+        StreamService streamService = new StreamService();
+        LambdaService lambdaService = new LambdaService("sunny");
 
-        StringStreamService stringStreamService = new StringStreamService();
-//        stringStreamService.limitCollectStream();
-//        stringStreamService.sortLimitCollectStream();
-//        stringStreamService.testCollectionImmutability();
-        stringStreamService.testMap();
-
-
+        filmService.makeFilmTreeSet();
+        FunctionalInterface fncInt = String::toUpperCase;
+        lambdaService.capitaliseName(fncInt);
+        System.out.println(lambdaService.name);
     }
 
 

@@ -1,4 +1,4 @@
-package collections.models;
+package models.films;
 
 public class Publisher {
     public String getName() {
