@@ -1,4 +1,4 @@
-package models;
+package models.films;
 
 public class FilmV2 extends Film{
     public FilmV2(String title, String director, int releaseYear) {

@@ -1,4 +1,4 @@
-package models;
+package models.films;
 
 public class Film implements Comparable<Film>{
 
