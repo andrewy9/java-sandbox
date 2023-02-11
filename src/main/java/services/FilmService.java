@@ -7,7 +7,11 @@ import models.films.FilmV2;
 import java.util.*;
 
 public class FilmService {
-    List<Film> films;
+    private List<Film> films;
+
+    public List<Film> getFilms() {
+        return films;
+    }
 
     public FilmService() {
         Film alpha = new FilmV2("alpha", "john", 1999);
@@ -68,5 +72,7 @@ public class FilmService {
         Set<Film> filmTreeSet = new TreeSet<>(newFilms);
         System.out.println(filmTreeSet);
     }
+
+
 
 }
