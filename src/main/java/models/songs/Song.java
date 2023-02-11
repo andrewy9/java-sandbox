@@ -1,4 +1,4 @@
-package models.films;
+package models.songs;
 
 public class Song {
     private final String title;
@@ -34,4 +34,9 @@ public class Song {
     public int getTimesPlayed() {
         return timesPlayed;
     }
+
+    public String toString() {
+        return getTitle() + " by " + getArtist() + " [" + getGenre() + "- " + getYear() + "] playedCount: " + getTimesPlayed() + "\n";
+    }
+
 }

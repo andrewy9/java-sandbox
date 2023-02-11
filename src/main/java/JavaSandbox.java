@@ -1,4 +1,3 @@
-import models.films.FunctionalInterface;
 import services.FilmService;
 import services.LambdaService;
 import services.StreamService;
@@ -10,10 +9,7 @@ public class JavaSandbox {
         StreamService streamService = new StreamService();
         LambdaService lambdaService = new LambdaService("sunny");
 
-        filmService.makeFilmTreeSet();
-        FunctionalInterface fncInt = String::toUpperCase;
-        lambdaService.capitaliseName(fncInt);
-        System.out.println(lambdaService.name);
+        streamService.testOptional("blue");
     }
 
 
