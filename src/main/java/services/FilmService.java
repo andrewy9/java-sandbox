@@ -1,7 +1,6 @@
 package services;
 
 import models.films.Film;
-import models.films.FilmRecord;
 import models.films.FilmV2;
 
 import java.util.*;
@@ -23,17 +22,6 @@ public class FilmService {
         films.add(sigma);
         films.add(alpha);
         films.add(sigma);
-    }
-
-    public void play() {
-        List<Film> filmRecord = FilmRecord.getFilms();
-        System.out.println(filmRecord);
-
-        filmRecord.sort(Comparator.comparing(Film::getTitle));
-        System.out.println(filmRecord);
-
-        Set<Film> filmSet = new HashSet<>(filmRecord);
-        System.out.println(filmSet);
     }
 
     public void sortByYear() {
@@ -73,6 +61,25 @@ public class FilmService {
         System.out.println(filmTreeSet);
     }
 
+    public void printTopFiveFilms() {
+        List<String> topFive = films.stream()
+                .distinct()
+                .sorted(Comparator.comparingInt(Film::getReleaseYear))
+                .limit(5)
+                .map(Film::getTitle)
+                .toList();
+        System.out.println(topFive);
+    }
 
+    public void search(String director) {
+        Optional<Film> result =  films.stream()
+                .filter(film -> film.getDirector().equals(director))
+                .findFirst();
 
+        if (result.isPresent()) {
+            System.out.println(result.get().getDirector());
+        } else {
+            System.out.println("No movie found by: " + director);
+        }
+    }
 }

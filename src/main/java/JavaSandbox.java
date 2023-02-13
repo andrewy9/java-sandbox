@@ -10,7 +10,10 @@ public class JavaSandbox {
         LambdaService lambdaService = new LambdaService("sunny");
 
         streamService.testOptional("blue");
-    }
 
+        filmService.printTopFiveFilms();
+        filmService.search("john");
+        filmService.search("beach boys");
+    }
 
 }
