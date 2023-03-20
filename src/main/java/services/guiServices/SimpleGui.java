@@ -1,4 +1,4 @@
-package services;
+package services.guiServices;
 
 import models.guis.MyDrawPanel;
 

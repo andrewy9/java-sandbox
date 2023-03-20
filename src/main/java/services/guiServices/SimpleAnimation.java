@@ -1,4 +1,4 @@
-package services;
+package services.guiServices;
 
 import javax.swing.*;
 import java.awt.*;
