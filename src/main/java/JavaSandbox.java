@@ -14,6 +14,9 @@ public class JavaSandbox {
         filmService.printTopFiveFilms();
         filmService.search("john");
         filmService.search("beach boys");
+
+        lambdaService.capitaliseName(name -> name.toUpperCase());
+        System.out.println(lambdaService.name);
     }
 
 }
